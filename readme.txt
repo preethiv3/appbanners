@@ -8,7 +8,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Ability to promote iOS and Android Applications with an App Banner similar to iOS6 App Banner.  Utilizes jQuery Smart Banner by <arnold@jasny.net>
+Ability to promote iOS and Android Applications with an App Banner similar to iOS6 App Banner. 
 
 == Description ==
 
