@@ -12,14 +12,10 @@ Ability to promote iOS and Android Applications with an App Banner similar to iO
 
 == Description ==
 
-Marketing an iOS App or Android App within your Wordpress site never got easier.  This plugin will allow you to put in your App IDs and automatically generate the proper meta tags to utilize Apple's App Banner as specified here.  
-<a href="http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html">http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html</a>
+Marketing an iOS App or Android App within your Wordpress site never got easier.  This plugin will allow you to put in your App IDs and automatically generate the proper meta tags to utilize Apple's App Banner as specified  <a href="http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html">here</a>.
 
-For older versions of iOS (prior to version 6.0) a jQuery alternative will pop up in similar fashion to the Apple one.  
+For older versions of iOS (prior to version 6.0) a jQuery alternative will pop up in similar fashion to the Apple one.  Android devices also are supported with links to the Google Play Store.
 
-Android devices also are supported with links to the Google Play Store.
-
- 
 
 This plugin utilizes the SmartBanner jQuery plugin https://github.com/jasny/jquery.smartbanner 
 
