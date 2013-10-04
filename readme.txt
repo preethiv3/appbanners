@@ -27,11 +27,12 @@ This plugin utilizes the SmartBanner jQuery plugin https://github.com/jasny/jque
 
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
 1. Go to 'Settings->App Banners' and enter in your 
-* Apple App Store App ID (http://linkmaker.itunes.apple.com/us/), 
-* Google Play App ID (http://developer.android.com/distribute/googleplay/promote/linking.html)
-* Author
-* App Title
-* Price
+1. Apple App Store App ID (http://linkmaker.itunes.apple.com/us/), 
+1. Google Play App ID (http://developer.android.com/distribute/googleplay/promote/linking.html)
+1. Author
+1. App Title
+1. Price
+
 == Frequently Asked Questions ==
 
 Please send any questions to matt@pramschufer.com
