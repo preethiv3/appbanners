@@ -4,7 +4,7 @@
   Plugin Name: App Banners
   Plugin URI: www.emoxie.com
   Description: Ability to promote iOS and Android Applications with an App Banner similar to iOS6 App Banner.  Utilizes jQuery Smart Banner by Arnold Daniels <arnold@jasny.net>
-  Version: 1.0
+  Version: 1.1
   Author: E-Moxie
   Author URI: www.emoxie.com
  */
@@ -58,6 +58,9 @@ if (!class_exists('AppBanners')) :
         $price = get_option('APP_BANNERS_price');
         $title = get_option('APP_BANNERS_title');
         $icon = get_option('APP_BANNERS_icon');
+        $button = get_option('APP_BANNERS_button');
+        $daysHidden = get_option('APP_BANNERS_daysHidden');
+        $daysReminder = get_option('APP_BANNERS_daysReminder');
         
         /*
          * Future plans to incorporate all of the options into the Settings of plugin
@@ -74,12 +77,12 @@ if (!class_exists('AppBanners')) :
                     inGooglePlay: 'In Google Play', // Text of price for Android
                     icon: '" . $icon . "', // The URL of the icon (defaults to <link>)
                     iconGloss: null, // Force gloss effect for iOS even for precomposed (true or false)
-                    button: 'VIEW', // Text on the install button
+                    button: '" . $button . "', // Text on the install button
                     scale: 'auto', // Scale based on viewport size (set to 1 to disable)
                     speedIn: 300, // Show animation speed of the banner
                     speedOut: 400, // Close animation speed of the banner
-                    daysHidden: 0, // Duration to hide the banner after being closed (0 = always show banner)
-                    daysReminder: 0, // Duration to hide the banner after 'VIEW' is clicked (0 = always show banner)
+                    daysHidden: " . $daysHidden . ", // Duration to hide the banner after being closed (0 = always show banner)
+                    daysReminder: " . $daysReminder . ", // Duration to hide the banner after 'VIEW' is clicked (0 = always show banner)
                     force: null // Choose 'ios' or 'android'. Don't do a browser check, just always show this banner
                 })            
                 </script>
@@ -102,6 +105,18 @@ if (!class_exists('AppBanners')) :
     }
     
     add_action('wp_head', 'AppBanners_Meta');
+    
+    
+    
+    
+    function AppBanners_settings_link($links) { 
+      $settings_link = '<a href="options-general.php?page=app-banners-plugin-options_options">Settings</a>'; 
+      array_unshift($links, $settings_link); 
+      return $links; 
+    }
+
+    $plugin = plugin_basename(__FILE__); 
+    add_filter("plugin_action_links_$plugin", 'AppBanners_settings_link' );    
     
     
     /*

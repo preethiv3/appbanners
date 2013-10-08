@@ -42,4 +42,11 @@ None Yet
 3. Android App Banner
 
 == Changelog ==
-1.0 Initial Release
+= 1.1 =
+* Added number of days to keep banner hidden after closing
+* Added number of days to keep banner hidden after clicking view button
+* Added ability to change text on button
+* Added in Settings link on Plugin Screen
+
+= 1.1 =
+* Initial Release

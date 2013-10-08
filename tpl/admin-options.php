@@ -68,7 +68,34 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_icon" value="<?php echo get_option('APP_BANNERS_icon'); ?>" /></p>
                         </label>
                     </td>
-                </tr>                 
+                </tr>  
+                
+                <tr>
+                    <td>
+                        <label for="APP_BANNERS_button">
+                            <p>Text on Button</p>
+                            <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_button" value="<?php echo get_option('APP_BANNERS_button'); ?>" /></p>
+                        </label>
+                    </td>
+                </tr>  
+                
+                <tr>
+                    <td>
+                        <label for="APP_BANNERS_daysHidden">
+                            <p>Duration in DAYS to hide the banner after being closed (0 = always show banner)</p>
+                            <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_daysHidden" value="<?php echo get_option('APP_BANNERS_daysHidden'); ?>" /></p>
+                        </label>
+                    </td>
+                </tr>  
+                
+                <tr>
+                    <td>
+                        <label for="APP_BANNERS_daysReminder">
+                            <p>Duration in DAYS to hide the banner after 'VIEW' is clicked (0 = always show banner)</p>
+                            <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_daysReminder" value="<?php echo get_option('APP_BANNERS_daysReminder'); ?>" /></p>
+                        </label>
+                    </td>
+                </tr>                  
             </tbody>
         </table>
 

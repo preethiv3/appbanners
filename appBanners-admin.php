@@ -23,6 +23,11 @@ class App_Banners_Admin {
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_price');
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_title');
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_icon');
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_button');
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_daysHidden');
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_daysReminder');
+        
+        
     }
 
     public static function menu() {
