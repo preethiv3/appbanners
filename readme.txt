@@ -43,6 +43,9 @@ None Yet
 
 == Changelog ==
 
+= 1.2.1 =
+* Hotfix for Android App ID typo in version 1.2
+
 = 1.2 =
 * Updated to Wordpress 3.9
 * Added in additional options to setting panel

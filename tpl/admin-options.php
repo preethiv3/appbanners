@@ -58,7 +58,7 @@
                         <label for="APP_BANNERS_title">
                             <p>App Title
                                 <br>
-                                <small>What the title of the app should be in the banner (defaults to Title Tag)</small></p>
+                                <small>What the title of the app should be in the banner (defaults to Title Tag from App Store)</small></p>
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_title" value="<?php echo $title; ?>" /></p>
                         </label>
                     </td>
@@ -68,7 +68,7 @@
                         <label for="APP_BANNERS_icon">
                             <p>App Icon
                                 <br>
-                                <small>The URL of the icon </small>
+                                <small>The URL of the icon (defaults to link from App Store)</small>
                             </p>
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_icon" value="<?php echo $icon; ?>" /></p>
                         </label>

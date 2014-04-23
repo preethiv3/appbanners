@@ -48,7 +48,7 @@ class App_Banners_Admin {
         $plugin_id = APP_BANNERS_ID;
         // display options page
         $appleID = get_option('APP_BANNERS_apple_id');
-        $androidID = get_option('APP_BANNERS_andoid_id');
+        $androidID = get_option('APP_BANNERS_android_id');
         $author = get_option('APP_BANNERS_author');
         $price = get_option('APP_BANNERS_price');
         $title = get_option('APP_BANNERS_title');
