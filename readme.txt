@@ -3,7 +3,7 @@ Contributors: mattpramschufer
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mattpram%40gmail%2ecom
 Tags: iOS App Banner, Android App Banner, Market App
 Requires at least: 3.5
-Tested up to: 3.6.1
+Tested up to: 3.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,6 +42,11 @@ None Yet
 3. Android App Banner
 
 == Changelog ==
+
+= 1.2 =
+* Updated to Wordpress 3.9
+* Added in additional options to setting panel
+
 = 1.1 =
 * Added number of days to keep banner hidden after closing
 * Added number of days to keep banner hidden after clicking view button

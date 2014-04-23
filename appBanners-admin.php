@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Administration functionality for App Banners Plugin
  * Author: Matt Pramschufer of E-Moxie
@@ -26,8 +27,12 @@ class App_Banners_Admin {
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_button');
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_daysHidden');
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_daysReminder');
-        
-        
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_speedOut');
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_speedIn');
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_iconGloss');
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_inAppStore');
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_inGooglePlay');
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_appStoreLanguage');
     }
 
     public static function menu() {
@@ -42,6 +47,22 @@ class App_Banners_Admin {
 
         $plugin_id = APP_BANNERS_ID;
         // display options page
+        $appleID = get_option('APP_BANNERS_apple_id');
+        $androidID = get_option('APP_BANNERS_andoid_id');
+        $author = get_option('APP_BANNERS_author');
+        $price = get_option('APP_BANNERS_price');
+        $title = get_option('APP_BANNERS_title');
+        $icon = get_option('APP_BANNERS_icon');
+        $button = get_option('APP_BANNERS_button');
+        $daysHidden = get_option('APP_BANNERS_daysHidden');
+        $daysReminder = get_option('APP_BANNERS_daysReminder');
+        $speedOut = get_option('APP_BANNERS_speedOut');
+        $speedIn = get_option('APP_BANNERS_speedIn');
+        $iconGloss = get_option('APP_BANNERS_iconGloss');
+        $inAppStore = get_option('APP_BANNERS_inAppStore');
+        $inGooglePlay = get_option('APP_BANNERS_inGooglePlay');
+        $appStoreLanguage = get_option('APP_BANNERS_appStoreLanguage');
+
         require_once dirname(__FILE__) . '/tpl/admin-options.php';
     }
 
