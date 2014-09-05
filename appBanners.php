@@ -4,7 +4,7 @@
   Plugin Name: App Banners
   Plugin URI: www.emoxie.com
   Description: Ability to promote iOS and Android Applications with an App Banner similar to iOS6 App Banner.  Utilizes jQuery Smart Banner by Arnold Daniels <arnold@jasny.net>
-  Version: 1.2.1
+  Version: 1.3
   Author: E-Moxie
   Author URI: www.emoxie.com
  */
@@ -76,15 +76,15 @@ if (!class_exists('AppBanners')) :
         echo "
                 <script type='text/javascript'>
                 jQuery.smartbanner({
-                    title: '" . $title . "', // What the title of the app should be in the banner (defaults to <title>)
-                    author: '" . $author . "', // What the author of the app should be in the banner (defaults to <meta name='author'> or hostname)
+                    title: '" . htmlspecialchars($title, ENT_QUOTES) . "', // What the title of the app should be in the banner (defaults to <title>)
+                    author: '" . htmlspecialchars($author, ENT_QUOTES) . "', // What the author of the app should be in the banner (defaults to <meta name='author'> or hostname)
                     price: '" . $price . "', // Price of the app
                     appStoreLanguage: '" . $appStoreLanguage . "', // us Language code for App Store
-                    inAppStore: '". $inAppStore . "', // On the App Store - Text of price for iOS
-                    inGooglePlay: '" . $inGooglePlay . "', // In Google Play - Text of price for Android
+                    inAppStore: '". htmlspecialchars($inAppStore, ENT_QUOTES) . "', // On the App Store - Text of price for iOS
+                    inGooglePlay: '" . htmlspecialchars($inGooglePlay, ENT_QUOTES) . "', // In Google Play - Text of price for Android
                     icon: '" . $icon . "', // The URL of the icon (defaults to <link>)
                     iconGloss: '" . $iconGloss . "', // Force gloss effect for iOS even for precomposed (true or false)
-                    button: '" . $button . "', // Text on the install button
+                    button: '" . htmlspecialchars($button, ENT_QUOTES) . "', // Text on the install button
                     scale: 'auto', // Scale based on viewport size (set to 1 to disable)
                     speedIn: '" . $speedIn . "', // 300 Show animation speed of the banner
                     speedOut: '" . $speedOut . "', // 400 Close animation speed of the banner

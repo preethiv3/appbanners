@@ -6,7 +6,7 @@
     <form action="options.php" method="post" id="<?php echo $plugin_id; ?>_options_form" name="<?php echo $plugin_id; ?>_options_form">
 
         <?php settings_fields($plugin_id . '_options'); ?>
-        
+
         <h2>App Banners &raquo; Settings</h2>
         <p>Enter your nine-digit app ID below. To find your app ID from the <a href="http://linkmaker.itunes.apple.com/us/" target="_blank">iTunes Link Maker</a>, type the name of your app in the Search field, and select the appropriate country and media type. In the results, find your app and select iPhone App Link in the column on the right. Your app ID is the nine-digit number in between id and ?mt.</p>
         <table class="widefat">
@@ -20,7 +20,7 @@
                     <th><input type="submit" name="submit" value="Save Settings" class="button-primary" /></th>
                 </tr>
             </tfoot>
-            <tbody>                
+            <tbody>
                 <tr>
                     <td>
                         <label for="APP_BANNERS_apple_id">
@@ -36,7 +36,7 @@
                             <p><input placeholder="Your Android ID" type="text" style="width:272px;height:24px;" name="APP_BANNERS_android_id" value="<?php echo $androidID; ?>" /></p>
                         </label>
                     </td>
-                </tr>                
+                </tr>
                 <tr>
                     <td>
                         <label for="APP_BANNERS_author">
@@ -44,7 +44,7 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_author" value="<?php echo $author; ?>" /></p>
                         </label>
                     </td>
-                </tr>                
+                </tr>
                 <tr>
                     <td>
                         <label for="APP_BANNERS_price">
@@ -52,7 +52,7 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_price" value="<?php echo $price; ?>" /></p>
                         </label>
                     </td>
-                </tr>  
+                </tr>
                 <tr>
                     <td>
                         <label for="APP_BANNERS_title">
@@ -62,7 +62,7 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_title" value="<?php echo $title; ?>" /></p>
                         </label>
                     </td>
-                </tr> 
+                </tr>
                 <tr>
                     <td>
                         <label for="APP_BANNERS_icon">
@@ -73,8 +73,8 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_icon" value="<?php echo $icon; ?>" /></p>
                         </label>
                     </td>
-                </tr>  
-                
+                </tr>
+
                 <tr>
                     <td>
                         <label for="APP_BANNERS_button">
@@ -84,8 +84,8 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_button" value="<?php echo $button; ?>" /></p>
                         </label>
                     </td>
-                </tr>  
-                
+                </tr>
+
                 <tr>
                     <td>
                         <label for="APP_BANNERS_daysHidden">
@@ -93,8 +93,8 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_daysHidden" value="<?php if(empty($daysHidden)){ echo '0'; } else { echo $daysHidden;} ?>" /></p>
                         </label>
                     </td>
-                </tr>  
-                
+                </tr>
+
                 <tr>
                     <td>
                         <label for="APP_BANNERS_daysReminder">
@@ -102,8 +102,8 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_daysReminder" value="<?php if(empty($daysReminder)){ echo '0'; } else { echo $daysReminder;} ?>" /></p>
                         </label>
                     </td>
-                </tr>   
-                
+                </tr>
+
                 <tr>
                     <td>
                         <label for="APP_BANNERS_speedOut">
@@ -111,8 +111,8 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_speedOut" value="<?php if(empty($speedOut)){ echo '400'; } else { echo $speedOut;} ?>" /></p>
                         </label>
                     </td>
-                </tr> 
-                
+                </tr>
+
                 <tr>
                     <td>
                         <label for="APP_BANNERS_speedIn">
@@ -120,8 +120,8 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_speedIn" value="<?php if(empty($speedIn)){ echo '300'; } else { echo $speedIn;} ?>" /></p>
                         </label>
                     </td>
-                </tr> 
-                
+                </tr>
+
                 <tr>
                     <td>
                         <label for="APP_BANNERS_iconGloss">
@@ -129,8 +129,8 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_iconGloss" value="<?php if(empty($iconGloss)){ echo 'false'; } else { echo $iconGloss;} ?>" /></p>
                         </label>
                     </td>
-                </tr> 
-                
+                </tr>
+
                 <tr>
                     <td>
                         <label for="APP_BANNERS_inAppStore">
@@ -138,8 +138,8 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_inAppStore" value="<?php if(empty($inAppStore)){ echo 'On the App Store'; } else { echo $inAppStore;} ?>" /></p>
                         </label>
                     </td>
-                </tr> 
-                
+                </tr>
+
                 <tr>
                     <td>
                         <label for="APP_BANNERS_inGooglePlay">
@@ -147,8 +147,8 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_inGooglePlay" value="<?php if(empty($inGooglePlay)){ echo 'In Google Play'; } else { echo $inGooglePlay;} ?>" /></p>
                         </label>
                     </td>
-                </tr> 
-                
+                </tr>
+
                 <tr>
                     <td>
                         <label for="APP_BANNERS_appStoreLanguage">
@@ -156,12 +156,12 @@
                             <p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_appStoreLanguage" value="<?php if(empty($appStoreLanguage)){ echo 'US'; } else { echo $appStoreLanguage;} ?>" /></p>
                         </label>
                     </td>
-                </tr>                 
-                
-                
-                
-                
-                
+                </tr>
+
+
+
+
+
             </tbody>
         </table>
 

@@ -3,7 +3,7 @@ Contributors: mattpramschufer
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mattpram%40gmail%2ecom
 Tags: iOS App Banner, Android App Banner, Market App
 Requires at least: 3.5
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,6 +42,10 @@ None Yet
 3. Android App Banner
 
 == Changelog ==
+
+= 1.3 =
+* Ensured compatibility with WP 4.0
+* Added in string escaping for fields to account for quotes and single quotes
 
 = 1.2.1 =
 * Hotfix for Android App ID typo in version 1.2
