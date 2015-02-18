@@ -9,6 +9,7 @@
 
         <h2>App Banners &raquo; Settings</h2>
         <p>Enter your nine-digit app ID below. To find your app ID from the <a href="http://linkmaker.itunes.apple.com/us/" target="_blank">iTunes Link Maker</a>, type the name of your app in the Search field, and select the appropriate country and media type. In the results, find your app and select iPhone App Link in the column on the right. Your app ID is the nine-digit number in between id and ?mt.</p>
+	    <p><strong>For Microsoft App Store</strong>:  msApplication-ID is found under Package name in your app manifest, and msApplication-PackageFamilyName is found under Package family name in your app manifest</p>
         <table class="widefat">
             <thead>
                    <tr>
@@ -36,6 +37,22 @@
                             <p><input placeholder="Your Android ID" type="text" style="width:272px;height:24px;" name="APP_BANNERS_android_id" value="<?php echo $androidID; ?>" /></p>
                         </label>
                     </td>
+                </tr>
+                <tr>
+	                <td>
+		                <label for="APP_BANNERS_ms_application_id">
+			                <p>Microsoft Store App ID</p>
+			                <p><input placeholder="Your MS Application ID" type="text" style="width:272px;height:24px;" name="APP_BANNERS_ms_application_id" value="<?php echo $msApplicationID; ?>" /></p>
+		                </label>
+	                </td>
+                </tr>
+                <tr>
+	                <td>
+		                <label for="APP_BANNERS_ms_application_package_name">
+			                <p>Microsoft Store Application Package Name</p>
+			                <p><input placeholder="Your MS Application Package Name" type="text" style="width:272px;height:24px;" name="APP_BANNERS_ms_application_package_name" value="<?php echo $msApplicationPackageName; ?>" /></p>
+		                </label>
+	                </td>
                 </tr>
                 <tr>
                     <td>
@@ -157,11 +174,6 @@
                         </label>
                     </td>
                 </tr>
-
-
-
-
-
             </tbody>
         </table>
 
