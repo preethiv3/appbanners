@@ -43,6 +43,11 @@ None Yet
 
 == Changelog ==
 
+= 1.5 =
+* Fixed issue with close button on Android
+* Fixed issue with if user set the banner to always show, it would still set a cookie
+* Updated code to only load tags for apps that have app ids filled in.
+
 = 1.4 =
 * Updated to latest version of jQuery Smartbanner plugin
 * Added in support for Windows Devices

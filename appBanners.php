@@ -4,7 +4,7 @@
   Plugin Name: App Banners
   Plugin URI: www.emoxie.com
   Description: Ability to promote iOS, Android and MS Applications with an App Banner similar to iOS6 App Banner.  Utilizes jQuery Smart Banner by Arnold Daniels <arnold@jasny.net>
-  Version: 1.4
+  Version: 1.5
   Author: E-Moxie
   Author URI: www.emoxie.com
  */
@@ -104,7 +104,6 @@ if ( ! class_exists( 'AppBanners' ) ) :
 	}
 
 
-
 	/*
 	 * Function to inject the default app banner meta tags into the head of the
 	 * site.  Utilizing wp_head action.
@@ -116,19 +115,36 @@ if ( ! class_exists( 'AppBanners' ) ) :
 		$msApplicationID          = get_option( 'APP_BANNERS_ms_application_id' );
 		$msApplicationPackageName = get_option( 'APP_BANNERS_ms_application_package_name' );
 
-		echo '<meta name="apple-itunes-app" content="app-id=' . $appleID . ', affiliate-data=, app-argument=">' . PHP_EOL;
-		echo '<meta name="google-play-app" content="app-id=' . $androidID . '">' . PHP_EOL;
-		echo '<meta name="msApplication-ID"content="' . $msApplicationID . '"/>' . PHP_EOL;
-		echo '<meta name="msApplication-PackageFamilyName"content="' . $msApplicationPackageName . '"/>' . PHP_EOL;
-		echo '<meta name="author" content="' . $author . '">' . PHP_EOL;
+		if ( $appleID ) {
+			echo '<meta name="apple-itunes-app" content="app-id=' . $appleID . '">' . PHP_EOL;
+		}
+		if ( $androidID ) {
+			echo '<meta name="google-play-app" content="app-id=' . $androidID . '">' . PHP_EOL;
+		}
+		if ( $msApplicationID ) {
+			echo '<meta name="msApplication-ID" content="' . $msApplicationID . '"/>' . PHP_EOL;
+		}
+		if ( $msApplicationPackageName ) {
+			echo '<meta name="msApplication-PackageFamilyName" content="' . $msApplicationPackageName . '"/>' . PHP_EOL;
+		}
+		if ( $author ) {
+			echo '<meta name="author" content="' . $author . '">' . PHP_EOL;
+		}
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . PHP_EOL;
 
 	}
 
 
+	/**
+	 * Add in Settings link to plugin details.
+	 * @param $links
+	 *
+	 * @return mixed
+	 */
 	function AppBanners_settings_link( $links ) {
 		$settings_link = '<a href="options-general.php?page=app-banners-plugin-options_options">Settings</a>';
 		array_unshift( $links, $settings_link );
+
 		return $links;
 	}
 
