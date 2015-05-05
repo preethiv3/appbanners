@@ -3,7 +3,7 @@ Contributors: mattpramschufer
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mattpram%40gmail%2ecom
 Tags: iOS App Banner, Android App Banner, Market App, MS App Banner
 Requires at least: 3.5
-Tested up to: 4.1
+Tested up to: 4.2.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,6 +42,9 @@ None Yet
 3. Android App Banner
 
 == Changelog ==
+
+= 1.5.1 =
+* Fixed issue with passing strings to Javascript instead of integers.  Thanks @michael78au for the heads up.
 
 = 1.5 =
 * Fixed issue with close button on Android

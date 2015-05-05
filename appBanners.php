@@ -4,7 +4,7 @@
   Plugin Name: App Banners
   Plugin URI: www.emoxie.com
   Description: Ability to promote iOS, Android and MS Applications with an App Banner similar to iOS6 App Banner.  Utilizes jQuery Smart Banner by Arnold Daniels <arnold@jasny.net>
-  Version: 1.5
+  Version: 1.5.1
   Author: E-Moxie
   Author URI: www.emoxie.com
  */
@@ -85,14 +85,14 @@ if ( ! class_exists( 'AppBanners' ) ) :
 				  inWindowsStore: 'In the Windows Store', // Text of price for Windows
 				  GooglePlayParams: null, // Additional parameters for the market
 				  icon: '" . $icon . "', // The URL of the icon (defaults to <meta name='apple-touch-icon'>)
-				  iconGloss: '" . $iconGloss . "', // Force gloss effect for iOS even for precomposed
+				  iconGloss: " . $iconGloss . ", // Force gloss effect for iOS even for precomposed
 				  url: null, // The URL for the button. Keep null if you want the button to link to the app store.
 				  button: '" . htmlspecialchars( $button, ENT_QUOTES ) . "', // Text for the install button
 				  scale: 'auto', // Scale based on viewport size (set to 1 to disable)
-				  speedIn: '" . $speedIn . "', // Show animation speed of the banner
-				  speedOut: '" . $speedOut . "', // Close animation speed of the banner
-				  daysHidden: '" . $daysHidden . "', // Duration to hide the banner after being closed (0 = always show banner)
-				  daysReminder: '" . $daysReminder . "', // Duration to hide the banner after 'VIEW' is clicked *separate from when the close button is clicked* (0 = always show banner)
+				  speedIn: " . $speedIn . ", // Show animation speed of the banner
+				  speedOut: " . $speedOut . ", // Close animation speed of the banner
+				  daysHidden: " . $daysHidden . ", // Duration to hide the banner after being closed (0 = always show banner)
+				  daysReminder: " . $daysReminder . ", // Duration to hide the banner after 'VIEW' is clicked *separate from when the close button is clicked* (0 = always show banner)
 				  force: null, // Choose 'ios', 'android' or 'windows'. Don't do a browser check, just always show this banner
 				  hideOnInstall: true, // Hide the banner after 'VIEW' is clicked.
 				  layer: false, // Display as overlay layer or slide down the page
