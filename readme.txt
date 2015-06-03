@@ -43,6 +43,9 @@ None Yet
 
 == Changelog ==
 
+= 1.5.3 =
+* Fixed dependency issue with last update.  Move generated settings into a PHP file which is enqueued after jQuery is ready.
+
 = 1.5.2 =
 * Fixed issue with injecting javascript into the header instead of the footer.  Thanks Tim for the heads up on that.
 
