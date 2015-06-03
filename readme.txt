@@ -43,6 +43,9 @@ None Yet
 
 == Changelog ==
 
+= 1.5.4 =
+* Wrapped app banners options in jQuery(document).ready() function.
+
 = 1.5.3 =
 * Fixed dependency issue with last update.  Move generated settings into a PHP file which is enqueued after jQuery is ready.
 
