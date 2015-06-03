@@ -2,8 +2,8 @@
 Contributors: mattpramschufer 
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mattpram%40gmail%2ecom
 Tags: iOS App Banner, Android App Banner, Market App, MS App Banner
-Requires at least: 3.5
-Tested up to: 4.2.1
+Requires at least: 4.0
+Tested up to: 4.2.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,6 +42,9 @@ None Yet
 3. Android App Banner
 
 == Changelog ==
+
+= 1.5.2 =
+* Fixed issue with injecting javascript into the header instead of the footer.  Thanks Tim for the heads up on that.
 
 = 1.5.1 =
 * Fixed issue with passing strings to Javascript instead of integers.  Thanks @michael78au for the heads up.

@@ -4,7 +4,7 @@
   Plugin Name: App Banners
   Plugin URI: www.emoxie.com
   Description: Ability to promote iOS, Android and MS Applications with an App Banner similar to iOS6 App Banner.  Utilizes jQuery Smart Banner by Arnold Daniels <arnold@jasny.net>
-  Version: 1.5.1
+  Version: 1.5.2
   Author: E-Moxie
   Author URI: www.emoxie.com
  */
@@ -42,8 +42,7 @@ if ( ! class_exists( 'AppBanners' ) ) :
 	function AppBanners_enqueue_scripts() {
 		wp_register_style( 'app-banners-styles', plugins_url( '/lib/smartbanner/jquery.smartbanner.css', __FILE__ ) );
 		wp_enqueue_style( 'app-banners-styles' );
-		wp_register_script( 'app-banners-scripts', plugins_url( '/lib/smartbanner/jquery.smartbanner.js', __FILE__ ), array( 'jquery' ) );
-		wp_enqueue_script( 'app-banners-scripts' );
+
 	}
 
 
@@ -53,6 +52,10 @@ if ( ! class_exists( 'AppBanners' ) ) :
 	 */
 
 	function AppBanners_Scripts() {
+
+		wp_register_script( 'app-banners-scripts', plugins_url( '/lib/smartbanner/jquery.smartbanner.js', __FILE__ ), array( 'jquery' ) );
+		wp_enqueue_script( 'app-banners-scripts' );
+
 		$author           = get_option( 'APP_BANNERS_author' );
 		$price            = get_option( 'APP_BANNERS_price' );
 		$title            = get_option( 'APP_BANNERS_title' );
