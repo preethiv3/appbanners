@@ -43,6 +43,9 @@ None Yet
 
 == Changelog ==
 
+= 1.5.5 =
+* Forced JS output via php headers, thanks again Tim.
+
 = 1.5.4 =
 * Wrapped app banners options in jQuery(document).ready() function.
 

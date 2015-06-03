@@ -4,6 +4,8 @@ define('WP_USE_THEMES', false);
 /// This is pretty nasty here and will cause issues with folks running wordpress out of a directory.. Not sure of proper fix at the moment.
 include($_SERVER['DOCUMENT_ROOT'] . '/wp-load.php');
 
+header('Content-Type: application/javascript');
+
 $author           = get_option( 'APP_BANNERS_author' );
 $price            = get_option( 'APP_BANNERS_price' );
 $title            = get_option( 'APP_BANNERS_title' );
