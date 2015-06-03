@@ -3,7 +3,6 @@ define('WP_USE_THEMES', false);
 
 /// This is pretty nasty here and will cause issues with folks running wordpress out of a directory.. Not sure of proper fix at the moment.
 include($_SERVER['DOCUMENT_ROOT'] . '/wp-load.php');
-
 header('Content-Type: application/javascript');
 
 $author           = get_option( 'APP_BANNERS_author' );
@@ -25,7 +24,7 @@ $appStoreLanguage = get_option( 'APP_BANNERS_appStoreLanguage' );
  * for this moment though I just needed a few.
  */
 echo "
-jQuery(document).ready(
+jQuery(function() {
 	jQuery.smartbanner({
 	  title: '" . htmlspecialchars( $title, ENT_QUOTES ) . "', // What the title of the app should be in the banner (defaults to <title>)
 	  author: '" . htmlspecialchars( $author, ENT_QUOTES ) . "', // What the author of the app should be in the banner (defaults to <meta name='author'> or hostname)
@@ -51,4 +50,4 @@ jQuery(document).ready(
 	  iOSUniversalApp: true, // If the iOS App is a universal app for both iPad and iPhone, display Smart Banner to iPad users, too.
 	  appendToSelector: 'body' //Append the banner to a specific selector
 	})
-);" . PHP_EOL;
+});" . PHP_EOL;

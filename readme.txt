@@ -43,6 +43,9 @@ None Yet
 
 == Changelog ==
 
+= 1.5.6 =
+* Sorry for so many errors, this should be last fix for the time being.
+
 = 1.5.5 =
 * Forced JS output via php headers, thanks again Tim.
 
