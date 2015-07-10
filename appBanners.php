@@ -4,7 +4,7 @@
   Plugin Name: App Banners
   Plugin URI: www.emoxie.com
   Description: Ability to promote iOS, Android and MS Applications with an App Banner similar to iOS6 App Banner.  Utilizes jQuery Smart Banner by Arnold Daniels <arnold@jasny.net>
-  Version: 1.5.6
+  Version: 1.5.7
   Author: E-Moxie
   Author URI: www.emoxie.com
  */
@@ -18,7 +18,6 @@ if ( ! class_exists( 'AppBanners' ) ) :
 		 */
 		public static function init() {
 			add_action( 'wp_enqueue_scripts', 'AppBanners_enqueue_scripts' );
-			add_action( 'wp_footer', 'AppBanners_Scripts' );
 			add_action( 'wp_head', 'AppBanners_Meta' );
 			add_filter( "plugin_action_links_" . plugin_basename( __FILE__ ), 'AppBanners_settings_link' );
 
@@ -43,21 +42,13 @@ if ( ! class_exists( 'AppBanners' ) ) :
 		wp_register_style( 'app-banners-styles', plugins_url( '/lib/smartbanner/jquery.smartbanner.css', __FILE__ ) );
 		wp_enqueue_style( 'app-banners-styles' );
 
-	}
-
-
-	/*
-	 * Function to inject the SmartBanner javascript into the footer of the page
-	 * After the wp_footer
-	 */
-
-	function AppBanners_Scripts() {
-
-		wp_register_script( 'app-banners-scripts', plugins_url( '/lib/smartbanner/jquery.smartbanner.js', __FILE__ ), array( 'jquery' ) );
+		//Script files are placed in Footer
+		wp_register_script( 'app-banners-scripts', plugins_url( '/lib/smartbanner/jquery.smartbanner.js', __FILE__ ), array( 'jquery' ), false, true );
 		wp_enqueue_script( 'app-banners-scripts' );
 
-		wp_register_script( 'app-banners-custom-scripts', plugins_url( '/js/init-js.php', __FILE__ ), array( 'jquery' ) );
+		wp_register_script( 'app-banners-custom-scripts', plugins_url( '/js/init-js.php', __FILE__ ), array( 'jquery' ), false, true );
 		wp_enqueue_script( 'app-banners-custom-scripts' );
+
 	}
 
 

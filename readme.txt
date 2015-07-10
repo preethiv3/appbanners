@@ -43,6 +43,9 @@ None Yet
 
 == Changelog ==
 
+= 1.5.7 =
+* Ensured that script files are properly injected into the footer by utilizing the 5th flag of wp_register_script(). Thanks e2robert! .
+
 = 1.5.6 =
 * Sorry for so many errors, this should be last fix for the time being.
 
