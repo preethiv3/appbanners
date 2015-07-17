@@ -31,9 +31,44 @@ This plugin utilizes the SmartBanner jQuery plugin https://github.com/jasny/jque
 
 == Frequently Asked Questions ==
 
-Please send any questions to matt@pramschufer.com
+= Is there a way to track the number of clicks to the install/open button on the App Banners Plugin with Javascript? =
+Yes.  There is a couple of ways.  The most preferred way would be to simply add the following code to your theme's scripts file or a place where you can add Javascript to your theme.  The other option is to add directly to your functions.php file of your theme.
 
-None Yet
+**Javscript Version**
+`      jQuery(document).ready(function ($) {
+         $('body').on('click', '.sb-button', function(){
+            ga('send', {
+               'hitType': 'event',          // Required.
+               'eventCategory': 'App Banners',   // Required.
+               'eventAction': 'click',      // Required.
+               'eventLabel': 'Clicked App Banner' //Optional
+            });
+         });
+      });`
+
+**Functions.php Version**
+`//Start App Banner Click Tracking
+ add_action('wp_head','appbanners_track_clicks_js');
+
+ function appbanners_track_clicks_js() {    ?>
+    <script>
+
+       jQuery(document).ready(function ($) {
+          $('body').on('click', '.sb-button', function(){
+             ga('send', {
+                'hitType': 'event',          // Required.
+                'eventCategory': 'App Banners',   // Required.
+                'eventAction': 'click',      // Required.
+                'eventLabel': 'Clicked App Banner' //Optional
+             });
+          });
+       });
+
+    </script>
+    <?php
+ }
+ //End App Banner Click Tracking`
+
 
 == Screenshots ==
 
