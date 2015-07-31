@@ -4,7 +4,7 @@
   Plugin Name: App Banners
   Plugin URI: www.emoxie.com
   Description: Ability to promote iOS, Android and MS Applications with an App Banner similar to iOS6 App Banner.  Utilizes jQuery Smart Banner by Arnold Daniels <arnold@jasny.net>
-  Version: 1.5.7
+  Version: 1.5.8
   Author: E-Moxie
   Author URI: www.emoxie.com
  */
@@ -39,17 +39,66 @@ if ( ! class_exists( 'AppBanners' ) ) :
 	 */
 
 	function AppBanners_enqueue_scripts() {
-		wp_register_style( 'app-banners-styles', plugins_url( '/lib/smartbanner/jquery.smartbanner.css', __FILE__ ) );
+		wp_register_style( 'app-banners-styles', plugins_url( '/lib/smartbanner/jquery.smartbanner.min.css', __FILE__ ) );
 		wp_enqueue_style( 'app-banners-styles' );
 
 		//Script files are placed in Footer
-		wp_register_script( 'app-banners-scripts', plugins_url( '/lib/smartbanner/jquery.smartbanner.js', __FILE__ ), array( 'jquery' ), false, true );
+		wp_register_script( 'app-banners-scripts', plugins_url( '/lib/smartbanner/jquery.smartbanner.min.js', __FILE__ ), array( 'jquery' ), false, true );
 		wp_enqueue_script( 'app-banners-scripts' );
 
-		wp_register_script( 'app-banners-custom-scripts', plugins_url( '/js/init-js.php', __FILE__ ), array( 'jquery' ), false, true );
+		wp_register_script( 'app-banners-custom-scripts', plugins_url( '/js/config.min.js', __FILE__ ), array( 'jquery' ), false, true );
+		wp_localize_script( 'app-banners-custom-scripts', 'appBannersConfig', AppBanners_config() );
+
 		wp_enqueue_script( 'app-banners-custom-scripts' );
 
 	}
+
+
+	function AppBanners_config(){
+
+		$author           = htmlspecialchars(get_option( 'APP_BANNERS_author' ), ENT_QUOTES );
+		$price            = get_option( 'APP_BANNERS_price' );
+		$title            = htmlspecialchars(get_option( 'APP_BANNERS_title' ), ENT_QUOTES );
+		$icon             = get_option( 'APP_BANNERS_icon' );
+		$button           = htmlspecialchars(get_option( 'APP_BANNERS_button' ), ENT_QUOTES );
+		$daysHidden       = get_option( 'APP_BANNERS_daysHidden' );
+		$daysReminder     = get_option( 'APP_BANNERS_daysReminder' );
+		$speedOut         = get_option( 'APP_BANNERS_speedOut' );
+		$speedIn          = get_option( 'APP_BANNERS_speedIn' );
+		$iconGloss        = get_option( 'APP_BANNERS_iconGloss' );
+		$inAppStore       = htmlspecialchars(get_option( 'APP_BANNERS_inAppStore' ), ENT_QUOTES );
+		$inGooglePlay     = htmlspecialchars(get_option( 'APP_BANNERS_inGooglePlay' ), ENT_QUOTES );
+		$appStoreLanguage = get_option( 'APP_BANNERS_appStoreLanguage' );
+
+		$options = array(
+			'title' => $title,
+			'author' => $author,
+			'price' => $price,
+			'appStoreLanguage' => $appStoreLanguage,
+			'inAppStore' => $inAppStore,
+			'inGooglePlay' => $inGooglePlay,
+			'inAmazonAppStore' => 'In the Amazon Appstore',
+			'inWindowsStore' => 'In the Windows Store',
+			'GooglePlayParams' => null,
+			'icon' => $icon,
+			'iconGloss' => $iconGloss,
+			'url' => null,
+			'button' => $button,
+			'scale' => 'auto',
+			'speedIn' => $speedIn,
+			'speedOut' => $speedOut,
+			'daysHidden' => $daysHidden,
+			'daysReminder' => $daysReminder,
+			'force' => null,
+			'hideOnInstall' => true,
+			'layer' => false,
+			'iOSUniversalApp' => true,
+			'appendToSelector' => 'body',
+		);
+
+		return $options;
+	}
+
 
 
 	/*

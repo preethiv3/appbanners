@@ -85,7 +85,7 @@
 					<label for="APP_BANNERS_icon">
 						<p>App Icon
 							<br>
-							<small>The URL of the icon</small>
+							<small>The URL of the icon.  If left blank will default to `meta name="apple-touch-icon"` </small>
 						</p>
 						<p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_icon" value="<?php echo $icon; ?>" /></p>
 					</label>

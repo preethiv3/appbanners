@@ -78,6 +78,12 @@ Yes.  There is a couple of ways.  The most preferred way would be to simply add 
 
 == Changelog ==
 
+= 1.5.8 =
+ * Completed redid the way I generate the javascript config file for plugin.  Not utilizing wp_localize_script().
+ * Updated to latest version of SmartBanners JS - https://github.com/jasny/jquery.smartbanner
+ * Added in extra functionality to detect Facebook and Twitter in iOS webview. Thanks so much to asadowski10 for the snippet!
+ * Minified all JS and CSS files, but included unminified versions in case folks need to tweak.
+
 = 1.5.7 =
 * Ensured that script files are properly injected into the footer by utilizing the 5th flag of wp_register_script(). Thanks e2robert! .
 
