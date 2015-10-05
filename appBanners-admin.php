@@ -25,6 +25,7 @@ class App_Banners_Admin {
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_title');
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_icon');
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_button');
+        register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_url');
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_daysHidden');
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_daysReminder');
         register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_speedOut');
@@ -35,6 +36,7 @@ class App_Banners_Admin {
 	    register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_appStoreLanguage');
 	    register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_ms_application_id');
 	    register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_ms_application_package_name');
+ 	    register_setting(APP_BANNERS_ID . '_options', 'APP_BANNERS_printViewPort');
     }
 
     public static function menu() {
@@ -55,6 +57,7 @@ class App_Banners_Admin {
         $title = get_option('APP_BANNERS_title');
         $icon = get_option('APP_BANNERS_icon');
         $button = get_option('APP_BANNERS_button');
+        $url = get_option('APP_BANNERS_url');
         $daysHidden = get_option('APP_BANNERS_daysHidden');
         $daysReminder = get_option('APP_BANNERS_daysReminder');
         $speedOut = get_option('APP_BANNERS_speedOut');
@@ -65,6 +68,7 @@ class App_Banners_Admin {
         $appStoreLanguage = get_option('APP_BANNERS_appStoreLanguage');
 	    $msApplicationID = get_option('APP_BANNERS_ms_application_id');
 	    $msApplicationPackageName= get_option('APP_BANNERS_ms_application_package_name');
+ 	    $printViewPort = get_option('APP_BANNERS_printViewPort', true);
 
         require_once dirname(__FILE__) . '/tpl/admin-options.php';
     }

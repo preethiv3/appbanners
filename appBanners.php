@@ -4,7 +4,7 @@
   Plugin Name: App Banners
   Plugin URI: www.emoxie.com
   Description: Ability to promote iOS, Android and MS Applications with an App Banner similar to iOS6 App Banner.  Utilizes jQuery Smart Banner by Arnold Daniels <arnold@jasny.net>
-  Version: 1.5.8
+  Version: 1.5.11
   Author: E-Moxie
   Author URI: www.emoxie.com
  */
@@ -54,51 +54,53 @@ if ( ! class_exists( 'AppBanners' ) ) :
 	}
 
 
-	function AppBanners_config(){
+	function AppBanners_config() {
 
-		$author           = htmlspecialchars(get_option( 'APP_BANNERS_author' ), ENT_QUOTES );
+		$author           = htmlspecialchars( get_option( 'APP_BANNERS_author' ), ENT_QUOTES );
 		$price            = get_option( 'APP_BANNERS_price' );
-		$title            = htmlspecialchars(get_option( 'APP_BANNERS_title' ), ENT_QUOTES );
+		$title            = htmlspecialchars( get_option( 'APP_BANNERS_title' ), ENT_QUOTES );
 		$icon             = get_option( 'APP_BANNERS_icon' );
-		$button           = htmlspecialchars(get_option( 'APP_BANNERS_button' ), ENT_QUOTES );
+		$button           = htmlspecialchars( get_option( 'APP_BANNERS_button' ), ENT_QUOTES );
+		$url              = get_option( 'APP_BANNERS_url' );
 		$daysHidden       = get_option( 'APP_BANNERS_daysHidden' );
 		$daysReminder     = get_option( 'APP_BANNERS_daysReminder' );
 		$speedOut         = get_option( 'APP_BANNERS_speedOut' );
 		$speedIn          = get_option( 'APP_BANNERS_speedIn' );
 		$iconGloss        = get_option( 'APP_BANNERS_iconGloss' );
-		$inAppStore       = htmlspecialchars(get_option( 'APP_BANNERS_inAppStore' ), ENT_QUOTES );
-		$inGooglePlay     = htmlspecialchars(get_option( 'APP_BANNERS_inGooglePlay' ), ENT_QUOTES );
+		$inAppStore       = htmlspecialchars( get_option( 'APP_BANNERS_inAppStore' ), ENT_QUOTES );
+		$inGooglePlay     = htmlspecialchars( get_option( 'APP_BANNERS_inGooglePlay' ), ENT_QUOTES );
 		$appStoreLanguage = get_option( 'APP_BANNERS_appStoreLanguage' );
+		$printViewPort    = get_option( 'APP_BANNERS_printViewPort' );
 
 		$options = array(
-			'title' => $title,
-			'author' => $author,
-			'price' => $price,
+			'title'            => $title,
+			'author'           => $author,
+			'price'            => $price,
 			'appStoreLanguage' => $appStoreLanguage,
-			'inAppStore' => $inAppStore,
-			'inGooglePlay' => $inGooglePlay,
+			'inAppStore'       => $inAppStore,
+			'inGooglePlay'     => $inGooglePlay,
 			'inAmazonAppStore' => 'In the Amazon Appstore',
-			'inWindowsStore' => 'In the Windows Store',
+			'inWindowsStore'   => 'In the Windows Store',
 			'GooglePlayParams' => null,
-			'icon' => $icon,
-			'iconGloss' => $iconGloss,
-			'url' => null,
-			'button' => $button,
-			'scale' => 'auto',
-			'speedIn' => $speedIn,
-			'speedOut' => $speedOut,
-			'daysHidden' => $daysHidden,
-			'daysReminder' => $daysReminder,
-			'force' => null,
-			'hideOnInstall' => true,
-			'layer' => false,
-			'iOSUniversalApp' => true,
+			'icon'             => $icon,
+			'iconGloss'        => $iconGloss,
+			'url'              => $url,
+			'button'           => $button,
+			'scale'            => 'auto',
+			'speedIn'          => $speedIn,
+			'speedOut'         => $speedOut,
+			'daysHidden'       => $daysHidden,
+			'daysReminder'     => $daysReminder,
+			'force'            => null,
+			'hideOnInstall'    => true,
+			'layer'            => false,
+			'iOSUniversalApp'  => true,
 			'appendToSelector' => 'body',
+			'printViewPort'    => $printViewPort
 		);
 
 		return $options;
 	}
-
 
 
 	/*
@@ -111,6 +113,7 @@ if ( ! class_exists( 'AppBanners' ) ) :
 		$author                   = get_option( 'APP_BANNERS_author' );
 		$msApplicationID          = get_option( 'APP_BANNERS_ms_application_id' );
 		$msApplicationPackageName = get_option( 'APP_BANNERS_ms_application_package_name' );
+		$printViewPort            = get_option( 'APP_BANNERS_printViewPort' );
 
 		if ( $appleID ) {
 			echo '<meta name="apple-itunes-app" content="app-id=' . $appleID . '">' . PHP_EOL;
@@ -127,13 +130,15 @@ if ( ! class_exists( 'AppBanners' ) ) :
 		if ( $author ) {
 			echo '<meta name="author" content="' . $author . '">' . PHP_EOL;
 		}
-		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . PHP_EOL;
-
+		if ( $printViewPort ) {
+			echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . PHP_EOL;
+		}
 	}
 
 
 	/**
 	 * Add in Settings link to plugin details.
+	 *
 	 * @param $links
 	 *
 	 * @return mixed

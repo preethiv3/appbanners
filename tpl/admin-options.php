@@ -1,4 +1,3 @@
-
 <div class="wrap">
 
 	<?php screen_icon(); ?>
@@ -105,6 +104,18 @@
 
 			<tr>
 				<td>
+					<label for="APP_BANNERS_url">
+						<p>URL for Button
+							<br>
+							<small>Leave blank if you want button to link to App Store</small></p>
+						<p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_url" value="<?php echo $url; ?>" /></p>
+					</label>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td>
 					<label for="APP_BANNERS_daysHidden">
 						<p>Duration in DAYS to hide the banner after being closed (0 = always show banner)</p>
 						<p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_daysHidden" value="<?php if(empty($daysHidden)){ echo '0'; } else { echo $daysHidden;} ?>" /></p>
@@ -171,6 +182,15 @@
 					<label for="APP_BANNERS_appStoreLanguage">
 						<p>App Store Language (US)</p>
 						<p><input type="text" style="width:272px;height:24px;" name="APP_BANNERS_appStoreLanguage" value="<?php if(empty($appStoreLanguage)){ echo 'US'; } else { echo $appStoreLanguage;} ?>" /></p>
+					</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label for="APP_BANNERS_appStoreLanguage">
+						<p>Do you want to output a viewport meta tag on your site?</p>
+						<p><input type="checkbox" name="APP_BANNERS_printViewPort" value='1' <?php checked( $printViewPort, 1); ?> /></p>
 					</label>
 				</td>
 			</tr>

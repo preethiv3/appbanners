@@ -3,7 +3,7 @@ Contributors: mattpramschufer
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mattpram%40gmail%2ecom
 Tags: iOS App Banner, Android App Banner, Market App, MS App Banner
 Requires at least: 4.0
-Tested up to: 4.2.3
+Tested up to: 4.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -77,6 +77,17 @@ Yes.  There is a couple of ways.  The most preferred way would be to simply add 
 3. Android App Banner
 
 == Changelog ==
+
+= 1.5.11 =
+ * Added in the ability to specify custom URL for button.  If you do not want to specify a url, leave it blank and it will default to app store.
+
+= 1.5.10 =
+ * Added in checkbox to allow control over outputting META VIEWPORT tag on site.
+ * Big shout out to e2.robert for taking the time to submitting the patch!
+
+= 1.5.9 =
+ * Reworked javascript set cookie function.  As there was a bug if you set the app banner to always show.
+ * Tested with Wordpress 4.3
 
 = 1.5.8 =
  * Completed redid the way I generate the javascript config file for plugin.  Not utilizing wp_localize_script().
